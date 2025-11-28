@@ -1,0 +1,394 @@
+
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Robojini/Tuturial_UI_Library/main/UI_Template_1"))()
+local Window = Library.CreateLib("Smilley", "RJTheme3")
+local player = game.Players.LocalPlayer
+local character = player.Character
+local i = 0
+local s = Instance.new("Highlight")
+local character = player.Character
+
+local Tab = Window:NewTab("Main")
+
+
+
+local Section = Tab:NewSection("Basic Functions")
+
+Section:NewButton("DIE","Killing for 1 Second (Have BYpass)", function()
+for i, d in pairs(game.Workspace:GetDescendants()) do
+    if d.ClassName == "Humanoid" then
+        local character = d.Parent
+        local player = game.Players:GetPlayerFromCharacter(character)
+        if player == nil then
+            d.Health = 0
+        end
+    end
+end
+end)
+
+Section:NewSlider("Speed Hack", "Adding Speed To Your Humanoid", 200, 0, function(s) -- 200 (Макс. значение) | 0 (Мин. значение)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+
+Section:NewToggle("GodMode", "Dont 100% Defense", function(state)
+    if state then
+        for _, part in pairs(character:GetChildren()) do
+		if part:IsA("Part") or part.Name == "Hitbox" then
+			part.CanTouch = false
+		end
+        end  
+
+    else
+        for _, part in pairs(character:GetChildren()) do
+    if part:IsA("Part") or part.Name == "Hitbox" then
+        part.CanTouch = true
+    end
+end    
+end
+end)
+
+
+Section:NewDropdown("Item Finder", "", {"RegularCapsule", "BetterCapsule", "Dense Code", "SoulDrop","CorruptedSoul","T1Rune","T2Rune","T3Rune","Overwrite Soul","Overwrite Essence"}, function(s)
+    if s == "RegularCapsule" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "RegularCapsule" then
+player.Character.HumanoidRootPart.CFrame = obj.CFrame
+end
+end
+    elseif s == "BetterCapsule" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "BetterCapsule" then
+obj.CFrame = player.Character.HumanoidRootPart.CFrame
+end
+end
+
+    elseif s == "Dense Code" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "Dense Code" then
+obj.CFrame = player.Character.HumanoidRootPart.CFrame
+end
+end
+
+    elseif s == "SoulDrop" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "SoulDrop" then
+obj.CFrame = player.Character.HumanoidRootPart.CFrame
+end
+end
+
+    elseif s == "CorruptedSoul" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "CorruptedSoul" then
+obj.CFrame = player.Character.HumanoidRootPart.CFrame
+end
+end
+
+    elseif s == "T1Rune" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "T1Rune" then
+obj.CFrame = player.Character.HumanoidRootPart.CFrame
+end
+end
+
+    elseif s == "T2Rune" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "T2Rune" then
+obj.CFrame = player.Character.HumanoidRootPart.CFrame
+end
+end
+
+    elseif s == "T3Rune" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "T3Rune" then
+obj.CFrame = player.Character.HumanoidRootPart.CFrame
+end
+end
+
+    elseif s == "Overwrite Essence" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "Overwrite Essence" then
+obj.CFrame = player.Character.HumanoidRootPart.CFrame
+end
+end
+
+    elseif s == "Overwrite Soul" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "Overwrite Soul" then
+obj.CFrame = player.Character.HumanoidRootPart.CFrame
+end
+end
+
+    elseif s == "Dense Code" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "Dense Code" then
+obj.CFrame = player.Character.HumanoidRootPart.CFrame
+end
+end
+    end
+end)
+
+
+Section:NewDropdown("Present Finder", "", {"Normall Present", "Coloured Present","Rare Present","Epic Present"}, function(s)
+    if s == "Normall Present" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "Normal Present" then
+player.Character.HumanoidRootPart.CFrame = obj.CFrame
+end
+end
+    elseif s == "Coloured Present" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "Coloured Present" then
+player.Character.HumanoidRootPart.CFrame = obj.CFrame
+end
+end
+    elseif s == "Epic Present" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "Epic Present" then
+player.Character.HumanoidRootPart.CFrame = obj.CFrame
+end
+end
+
+    elseif s == "Rare Present" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "Rare Present" then
+player.Character.HumanoidRootPart.CFrame = obj.CFrame
+end
+end
+    end
+end)
+
+Section:NewButton("ShortCut (No CD)", "Shortcut", function()
+mouse = game.Players.LocalPlayer:GetMouse()
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "ShortCut"
+tool.Activated:connect(function()
+local pos = mouse.Hit+Vector3.new(0,2.5,0)
+pos = CFrame.new(pos.X,pos.Y,pos.Z)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+end)
+tool.Parent = game.Players.LocalPlayer.Backpack
+end)
+
+Section:NewButton("Fast Interact", "Shortcut", function()
+while wait(0.01) do
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "ProximityPrompt" then
+obj.HoldDuration = 0
+wait(0.00001)
+end
+end
+end
+end)
+
+
+local Tab = Window:NewTab("Teleport Mobs")
+
+
+
+local Section = Tab:NewSection("Basic Functions")
+
+Section:NewButton("UUAHater","Killing for 1 Second (Have BYpass)", function()
+for i , obj in pairs(game.Workspace:GetChildren()) do
+if obj.Name == "UUAHater" then
+obj.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -10, 0)
+end
+end
+end)
+
+Section:NewButton("RetroHater","Killing for 1 Second (Have BYpass)", function()
+for i , obj in pairs(game.Workspace:GetChildren()) do
+if obj.Name == "RetroHater" then
+obj.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -10, 0)
+end
+end
+end)
+
+Section:NewButton("CodeHater","Killing for 1 Second (Have BYpass)", function()
+for i , obj in pairs(game.Workspace:GetChildren()) do
+if obj.Name == "CodeHater" then
+obj.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -10, 0)
+end
+end
+end)
+
+Section:NewButton("EvilHater","Killing for 1 Second (Have BYpass)", function()
+for i , obj in pairs(game.Workspace:GetChildren()) do
+if obj.Name == "EvilHater" or obj.Name == "EvilHater2" or obj.Name == "EvilHater3" then
+obj.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -10, 0)
+end
+end
+end)
+
+
+local Tab = Window:NewTab("Locations Teleport")
+
+
+
+local Section = Tab:NewSection("Basic Functions")
+
+Section:NewButton("BMRoom","Killing for 1 Second (Have BYpass)", function()
+player.Character:PivotTo(game.Workspace.Map:FindFirstChild("BMRoom").TPPart.CFrame + Vector3.new(0, 3, 0))
+end)
+
+Section:NewButton("AntiVoid","Killing for 1 Second (Have BYpass)", function()
+player.Character:PivotTo(game.Workspace.Map:FindFirstChild("AntiVoid").Here.CFrame + Vector3.new(0, 3, 0))
+end)
+
+Section:NewButton("CorruptedMainframe","Killing for 1 Second (Have BYpass)", function()
+player.Character:PivotTo(game.Workspace.Map:FindFirstChild("CorruptedMainframe").Here.CFrame + Vector3.new(0, 3, 0))
+end)
+
+Section:NewButton("DeepCode","Killing for 1 Second (Have BYpass)", function()
+player.Character:PivotTo(game.Workspace.Map:FindFirstChild("DeepCode").Here.CFrame + Vector3.new(0, 3, 0))
+end)
+
+Section:NewButton("DoodleSphere","Killing for 1 Second (Have BYpass)", function()
+player.Character:PivotTo(game.Workspace.Map:FindFirstChild("DoodleSphere").Here.CFrame + Vector3.new(0, 3, 0))
+end)
+
+Section:NewButton("GasterRoom","Killing for 1 Second (Have BYpass)", function()
+player.Character:PivotTo(game.Workspace.Map:FindFirstChild("GasterRoom").TPPart.CFrame + Vector3.new(0, 3, 0))
+end)
+
+Section:NewButton("LoadingZone","Killing for 1 Second (Have BYpass)", function()
+player.Character:PivotTo(game.Workspace.Map:FindFirstChild("LoadingZone").TPPart.CFrame + Vector3.new(0, 3, 0))
+end)
+
+
+
+Section:NewButton("Mainframe","Killing for 1 Second (Have BYpass)", function()
+player.Character:PivotTo(game.Workspace.Map:FindFirstChild("Mainframe").Here.CFrame + Vector3.new(0, 3, 0))
+end)
+
+
+Section:NewButton("SFRoom","Killing for 1 Second (Have BYpass)", function()
+player.Character:PivotTo(game.Workspace.Map:FindFirstChild("SFRoom").Here.CFrame + Vector3.new(0, 3, 0))
+
+end)
+
+
+Section:NewButton("TrueBarrier","Killing for 1 Second (Have BYpass)", function()
+player.Character:PivotTo(game.Workspace.Map:FindFirstChild("TrueBarrier").TPHere.CFrame + Vector3.new(0, 3, 0))
+end)
+
+
+local Tab = Window:NewTab("VIP SERVER")
+
+
+
+local Section = Tab:NewSection("Basic Functions")
+
+Section:NewDropdown("Present Finder", "", {"Normall Present", "Coloured Present","Rare Present","Epic Present"}, function(s)
+    if s == "Normall Present" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "Normal Present" then
+obj.CFrame = player.Character.HumanoidRootPart.CFrame
+end
+end
+    elseif s == "Coloured Present" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "Coloured Present" then
+obj.CFrame = player.Character.HumanoidRootPart.CFrame
+end
+end
+    elseif s == "Epic Present" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "Epic Present" then
+obj.CFrame = player.Character.HumanoidRootPart.CFrame
+end
+end
+
+    elseif s == "Rare Present" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "Rare Present" then
+obj.CFrame = player.Character.HumanoidRootPart.CFrame
+end
+end
+    end
+end)
+
+Section:NewDropdown("Item Finder", "", {"RegularCapsule", "BetterCapsule", "Dense Code", "SoulDrop","CorruptedSoul","T1Rune","T2Rune","T3Rune","Overwrite Soul","Overwrite Essence"}, function(s)
+    if s == "RegularCapsule" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "RegularCapsule" then
+obj.CFrame = player.Character.HumanoidRootPart.CFrame
+end
+end
+    elseif s == "BetterCapsule" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "BetterCapsule" then
+obj.CFrame = player.Character.HumanoidRootPart.CFrame
+end
+end
+
+    elseif s == "Dense Code" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "Dense Code" then
+obj.CFrame = player.Character.HumanoidRootPart.CFrame
+end
+end
+
+    elseif s == "SoulDrop" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "SoulDrop" then
+obj.CFrame = player.Character.HumanoidRootPart.CFrame
+end
+end
+
+    elseif s == "CorruptedSoul" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "CorruptedSoul" then
+obj.CFrame = player.Character.HumanoidRootPart.CFrame
+end
+end
+
+    elseif s == "T1Rune" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "T1Rune" then
+obj.CFrame = player.Character.HumanoidRootPart.CFrame
+end
+end
+
+    elseif s == "T2Rune" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "T2Rune" then
+obj.CFrame = player.Character.HumanoidRootPart.CFrame
+end
+end
+
+    elseif s == "T3Rune" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "T3Rune" then
+obj.CFrame = player.Character.HumanoidRootPart.CFrame
+end
+end
+
+    elseif s == "Overwrite Essence" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "Overwrite Essence" then
+obj.CFrame = player.Character.HumanoidRootPart.CFrame
+end
+end
+
+    elseif s == "Overwrite Soul" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "Overwrite Soul" then
+obj.CFrame = player.Character.HumanoidRootPart.CFrame
+end
+end
+
+    elseif s == "Dense Code" then
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "Dense Code" then
+obj.CFrame = player.Character.HumanoidRootPart.CFrame
+end
+end
+    end
+end)
+
+
+
+
+
