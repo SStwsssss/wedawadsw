@@ -228,6 +228,10 @@ local Tab = Window:NewTab("Locations Teleport")
 
 local Section = Tab:NewSection("Basic Functions")
 
+Section:NewButton("Snowdin..","Killing for 1 Second (Have BYpass)", function()
+player.Character:PivotTo(CFrame.new(0.997055172920227, 692.9488525390625, -3176.63134765625 + Vector3.new(0, 3, 0)))
+end)
+
 Section:NewButton("BMRoom","Killing for 1 Second (Have BYpass)", function()
 player.Character:PivotTo(game.Workspace.Map:FindFirstChild("BMRoom").TPPart.CFrame + Vector3.new(0, 3, 0))
 end)
