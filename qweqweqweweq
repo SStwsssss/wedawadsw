@@ -302,7 +302,7 @@ Section:NewButton("XTALE","Killing for 1 Second (Have BYpass)", function()
 player.Character:PivotTo(game.Workspace.Map:FindFirstChild("XTALE").Here.CFrame + Vector3.new(0, 3, 0))
 end)
 
-Section:NewButton("XTALE","Killing for 1 Second (Have BYpass)", function()
+Section:NewButton("tesco","Killing for 1 Second (Have BYpass)", function()
 player.Character:PivotTo(game.Workspace.Map:FindFirstChild("tesco").TPPart.CFrame + Vector3.new(0, 3, 0))
 end)
 
