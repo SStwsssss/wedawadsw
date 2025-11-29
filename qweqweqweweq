@@ -310,6 +310,12 @@ Section:NewButton("Diffmap","Killing for 1 Second (Have BYpass)", function()
 player.Character:PivotTo(CFrame.new(2667.570556640625, 7264.72314453125, -3895.981689453125))
 end)
 
+
+Section:NewButton("Zalgo Map","Killing for 1 Second (Have BYpass)", function()
+player.Character:PivotTo(CFrame.new(14699.4189453125, -17.678972244262695, 671.1868896484375))
+end)
+
+
 local Tab = Window:NewTab("VIP SERVER")
 
 
