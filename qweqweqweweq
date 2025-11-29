@@ -302,6 +302,14 @@ Section:NewButton("XTALE","Killing for 1 Second (Have BYpass)", function()
 player.Character:PivotTo(game.Workspace.Map:FindFirstChild("XTALE").Here.CFrame + Vector3.new(0, 3, 0))
 end)
 
+Section:NewButton("XTALE","Killing for 1 Second (Have BYpass)", function()
+player.Character:PivotTo(game.Workspace.Map:FindFirstChild("tesco").TPPart.CFrame + Vector3.new(0, 3, 0))
+end)
+
+Section:NewButton("Diffmap","Killing for 1 Second (Have BYpass)", function()
+player.Character:PivotTo(CFrame.new(2667.570556640625, 7264.72314453125, -3895.981689453125))
+end)
+
 local Tab = Window:NewTab("VIP SERVER")
 
 
