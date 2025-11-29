@@ -1,4 +1,5 @@
 
+
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Robojini/Tuturial_UI_Library/main/UI_Template_1"))()
 local Window = Library.CreateLib("Smilley", "RJTheme3")
 local player = game.Players.LocalPlayer
@@ -307,10 +308,6 @@ end)
 
 Section:NewButton("Diffmap","Killing for 1 Second (Have BYpass)", function()
 player.Character:PivotTo(CFrame.new(2667.570556640625, 7264.72314453125, -3895.981689453125))
-end)
-
-Section:NewButton("Zalgo location","Killing for 1 Second (Have BYpass)", function()
-player.Character:PivotTo(CFrame.new(14356.2470703125, 6.052951335906982, 281.5234680175781))
 end)
 
 local Tab = Window:NewTab("VIP SERVER")
