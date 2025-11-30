@@ -298,21 +298,8 @@ Section:NewButton("TrueBarrier","Killing for 1 Second (Have BYpass)", function()
 player.Character:PivotTo(game.Workspace.Map:FindFirstChild("TrueBarrier").TPHere.CFrame + Vector3.new(0, 3, 0))
 end)
 
-Section:NewButton("XTALE","Killing for 1 Second (Have BYpass)", function()
-player.Character:PivotTo(game.Workspace.Map:FindFirstChild("XTALE").Here.CFrame + Vector3.new(0, 3, 0))
-end)
-
-Section:NewButton("tesco","Killing for 1 Second (Have BYpass)", function()
-player.Character:PivotTo(game.Workspace.Map:FindFirstChild("tesco").TPPart.CFrame + Vector3.new(0, 3, 0))
-end)
-
-Section:NewButton("Diffmap","Killing for 1 Second (Have BYpass)", function()
-player.Character:PivotTo(CFrame.new(2667.570556640625, 7264.72314453125, -3895.981689453125))
-end)
-
-
-Section:NewButton("Zalgo Map","Killing for 1 Second (Have BYpass)", function()
-player.Character:PivotTo(CFrame.new(14699.4189453125, -17.678972244262695, 671.1868896484375))
+Section:NewButton("Tundra","Killing for 1 Second (Have BYpass)", function()
+player.Character:PivotTo(CFrame.new(-4705.5908203125, 461.3764343261719, -9145.166015625))
 end)
 
 
