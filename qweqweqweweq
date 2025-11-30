@@ -17,6 +17,7 @@ local Section = Tab:NewSection("Basic Functions")
 Section:NewButton("Esp Enemies","Killing for 1 Second (Have BYpass)", function()
 while wait(0.02) do
 for i , obj in pairs(game.Workspace.Map.Enemies:GetDescendants()) do
+wait(0.01)
 if obj.Name == "Humanoid" then
 local mat = s:Clone()
 mat.FillTransparency = 1
@@ -76,80 +77,103 @@ end
 end)
 
 
-Section:NewDropdown("Item Finder", "", {"RegularCapsule", "BetterCapsule", "Dense Code", "SoulDrop","CorruptedSoul","T1Rune","T2Rune","T3Rune","Overwrite Soul","Overwrite Essence"}, function(s)
+Section:NewDropdown("Item Finder", "", {"RegularCapsule", "BetterCapsule", "Dense Code", "SoulDrop","CorruptedSoul","T1Rune","T2Rune","T3Rune","Overwrite Soul","Overwrite Essence","Burning Present","Flower"}, function(s)
     if s == "RegularCapsule" then
 for i , obj in pairs(game.Workspace:GetDescendants()) do
 if obj.Name == "RegularCapsule" then
-player.Character.HumanoidRootPart.CFrame = obj.CFrame
+player.Character:PivotTo(obj.CFrame)
 end
 end
     elseif s == "BetterCapsule" then
 for i , obj in pairs(game.Workspace:GetDescendants()) do
 if obj.Name == "BetterCapsule" then
-obj.CFrame = player.Character.HumanoidRootPart.CFrame
+player.Character:PivotTo(obj.CFrame)
 end
 end
 
     elseif s == "Dense Code" then
 for i , obj in pairs(game.Workspace:GetDescendants()) do
 if obj.Name == "Dense Code" then
-obj.CFrame = player.Character.HumanoidRootPart.CFrame
+player.Character:PivotTo(obj.CFrame)
 end
 end
 
     elseif s == "SoulDrop" then
 for i , obj in pairs(game.Workspace:GetDescendants()) do
 if obj.Name == "SoulDrop" then
-obj.CFrame = player.Character.HumanoidRootPart.CFrame
+player.Character:PivotTo(obj.CFrame)
 end
 end
 
     elseif s == "CorruptedSoul" then
 for i , obj in pairs(game.Workspace:GetDescendants()) do
 if obj.Name == "CorruptedSoul" then
-obj.CFrame = player.Character.HumanoidRootPart.CFrame
+player.Character:PivotTo(obj.CFrame)
 end
 end
 
     elseif s == "T1Rune" then
 for i , obj in pairs(game.Workspace:GetDescendants()) do
 if obj.Name == "T1Rune" then
-obj.CFrame = player.Character.HumanoidRootPart.CFrame
+player.Character:PivotTo(obj.CFrame)
 end
 end
 
     elseif s == "T2Rune" then
 for i , obj in pairs(game.Workspace:GetDescendants()) do
 if obj.Name == "T2Rune" then
-obj.CFrame = player.Character.HumanoidRootPart.CFrame
+player.Character:PivotTo(obj.CFrame)
 end
 end
 
     elseif s == "T3Rune" then
 for i , obj in pairs(game.Workspace:GetDescendants()) do
 if obj.Name == "T3Rune" then
-obj.CFrame = player.Character.HumanoidRootPart.CFrame
+player.Character:PivotTo(obj.CFrame)
 end
 end
 
     elseif s == "Overwrite Essence" then
 for i , obj in pairs(game.Workspace:GetDescendants()) do
 if obj.Name == "Overwrite Essence" then
-obj.CFrame = player.Character.HumanoidRootPart.CFrame
+player.Character:PivotTo(obj.CFrame)
 end
 end
 
     elseif s == "Overwrite Soul" then
 for i , obj in pairs(game.Workspace:GetDescendants()) do
 if obj.Name == "Overwrite Soul" then
-obj.CFrame = player.Character.HumanoidRootPart.CFrame
+player.Character:PivotTo(obj.CFrame)
 end
 end
 
     elseif s == "Dense Code" then
 for i , obj in pairs(game.Workspace:GetDescendants()) do
 if obj.Name == "Dense Code" then
-obj.CFrame = player.Character.HumanoidRootPart.CFrame
+player.Character:PivotTo(obj.CFrame)
+end
+end
+    elseif s == "Burning Present" then
+local player = game.Players.LocalPlayer
+for i , obj in pairs(game.Workspace.Map:GetChildren()) do
+if obj.Name == "Burning Present" then
+player.Character:PivotTo(obj.CFrame)
+end
+end
+
+    elseif s == "Flower" then
+local player = game.Players.LocalPlayer
+for i , obj in pairs(game.Workspace.Map:GetDescendants()) do
+if obj.Name == "Thing" and obj.Parent.Name == "Flower" then
+player.Character:PivotTo(obj.CFrame)
+end
+end
+
+    elseif s == "Ice Fragment" then
+local player = game.Players.LocalPlayer
+for i , obj in pairs(game.Workspace:GetDescendants()) do
+if obj.Name == "Ice Fragment" then
+player.Character:PivotTo(obj.CFrame)
 end
 end
     end
@@ -220,54 +244,17 @@ tool.Parent = game.Players.LocalPlayer.Backpack
 end)
 
 Section:NewButton("Fast Interact", "Shortcut", function()
-while wait(0.01) do
+while wait(0.001) do
 for i , obj in pairs(game.Workspace:GetDescendants()) do
 if obj.Name == "ProximityPrompt" then
 obj.HoldDuration = 0
-wait(0.00001)
+wait(0.00000000000000000000000000000000000000000000000000000000000000000000000000000001)
 end
 end
 end
 end)
 
 
-local Tab = Window:NewTab("Teleport Mobs")
-
-
-
-local Section = Tab:NewSection("Basic Functions")
-
-Section:NewButton("UUAHater","Killing for 1 Second (Have BYpass)", function()
-for i , obj in pairs(game.Workspace:GetChildren()) do
-if obj.Name == "UUAHater" then
-obj.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -10, 0)
-end
-end
-end)
-
-Section:NewButton("RetroHater","Killing for 1 Second (Have BYpass)", function()
-for i , obj in pairs(game.Workspace:GetChildren()) do
-if obj.Name == "RetroHater" then
-obj.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -10, 0)
-end
-end
-end)
-
-Section:NewButton("CodeHater","Killing for 1 Second (Have BYpass)", function()
-for i , obj in pairs(game.Workspace:GetChildren()) do
-if obj.Name == "CodeHater" then
-obj.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -10, 0)
-end
-end
-end)
-
-Section:NewButton("EvilHater","Killing for 1 Second (Have BYpass)", function()
-for i , obj in pairs(game.Workspace:GetChildren()) do
-if obj.Name == "EvilHater" or obj.Name == "EvilHater2" or obj.Name == "EvilHater3" then
-obj.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -10, 0)
-end
-end
-end)
 
 
 local Tab = Window:NewTab("Locations Teleport")
@@ -326,6 +313,10 @@ Section:NewButton("Tundra","Killing for 1 Second (Have BYpass)", function()
 player.Character:PivotTo(CFrame.new(-4705.5908203125, 470.3764343261719, -9145.166015625))
 end)
 
+Section:NewButton("Tesco","Killing for 1 Second (Have BYpass)", function()
+player.Character:PivotTo(CFrame.new(3056.7158203125, 35334.44140625, -11534.0029296875))
+end)
+
 local Tab = Window:NewTab("Other Teleport")
 
 
@@ -347,82 +338,28 @@ local Tab = Window:NewTab("VIP SERVER")
 
 
 
-local Section = Tab:NewSection("Basic Functions")
+local Section = Tab:NewSection("Can Have Bugs")
 
 
-Section:NewDropdown("Item Finder", "", {"RegularCapsule", "BetterCapsule", "Dense Code", "SoulDrop","CorruptedSoul","T1Rune","T2Rune","T3Rune","Overwrite Soul","Overwrite Essence"}, function(s)
-    if s == "RegularCapsule" then
+Section:NewDropdown("Item Summon", "", {"Ice Core", "Forstbitten Souls", "Ice Fragment", "Burning Present"}, function(s)
+    if s == "Ice Core" then
 for i , obj in pairs(game.Workspace:GetDescendants()) do
-if obj.Name == "RegularCapsule" then
+if obj.Name == "Ice Core" then
 obj.CFrame = player.Character.HumanoidRootPart.CFrame
 end
 end
-    elseif s == "BetterCapsule" then
+    elseif s == "Forstbitten Souls" then
+local player = game.Players.LocalPlayer
 for i , obj in pairs(game.Workspace:GetDescendants()) do
-if obj.Name == "BetterCapsule" then
-obj.CFrame = player.Character.HumanoidRootPart.CFrame
-end
-end
-
-    elseif s == "Dense Code" then
-for i , obj in pairs(game.Workspace:GetDescendants()) do
-if obj.Name == "Dense Code" then
+if obj.Name == "Frostbitten Soul" then
 obj.CFrame = player.Character.HumanoidRootPart.CFrame
 end
 end
 
-    elseif s == "SoulDrop" then
+    elseif s == "Ice Fragment" then
+local player = game.Players.LocalPlayer
 for i , obj in pairs(game.Workspace:GetDescendants()) do
-if obj.Name == "SoulDrop" then
-obj.CFrame = player.Character.HumanoidRootPart.CFrame
-end
-end
-
-    elseif s == "CorruptedSoul" then
-for i , obj in pairs(game.Workspace:GetDescendants()) do
-if obj.Name == "CorruptedSoul" then
-obj.CFrame = player.Character.HumanoidRootPart.CFrame
-end
-end
-
-    elseif s == "T1Rune" then
-for i , obj in pairs(game.Workspace:GetDescendants()) do
-if obj.Name == "T1Rune" then
-obj.CFrame = player.Character.HumanoidRootPart.CFrame
-end
-end
-
-    elseif s == "T2Rune" then
-for i , obj in pairs(game.Workspace:GetDescendants()) do
-if obj.Name == "T2Rune" then
-obj.CFrame = player.Character.HumanoidRootPart.CFrame
-end
-end
-
-    elseif s == "T3Rune" then
-for i , obj in pairs(game.Workspace:GetDescendants()) do
-if obj.Name == "T3Rune" then
-obj.CFrame = player.Character.HumanoidRootPart.CFrame
-end
-end
-
-    elseif s == "Overwrite Essence" then
-for i , obj in pairs(game.Workspace:GetDescendants()) do
-if obj.Name == "Overwrite Essence" then
-obj.CFrame = player.Character.HumanoidRootPart.CFrame
-end
-end
-
-    elseif s == "Overwrite Soul" then
-for i , obj in pairs(game.Workspace:GetDescendants()) do
-if obj.Name == "Overwrite Soul" then
-obj.CFrame = player.Character.HumanoidRootPart.CFrame
-end
-end
-
-    elseif s == "Dense Code" then
-for i , obj in pairs(game.Workspace:GetDescendants()) do
-if obj.Name == "Dense Code" then
+if obj.Name == "Ice Fragment" then
 obj.CFrame = player.Character.HumanoidRootPart.CFrame
 end
 end
