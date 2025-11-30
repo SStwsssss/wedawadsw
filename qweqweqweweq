@@ -14,7 +14,34 @@ local Tab = Window:NewTab("Main")
 
 local Section = Tab:NewSection("Basic Functions")
 
-Section:NewButton("DIE","Killing for 1 Second (Have BYpass)", function()
+Section:NewButton("Esp Enemies","Killing for 1 Second (Have BYpass)", function()
+while wait(0.02) do
+for i , obj in pairs(game.Workspace.Map.Enemies:GetDescendants()) do
+if obj.Name == "Humanoid" then
+local mat = s:Clone()
+mat.FillTransparency = 1
+mat.OutlineColor = Color3.fromRGB(0,0,0)
+mat.Parent = obj.Parent
+end
+end
+end
+end)
+
+Section:NewButton("Kill Aura","Killing for 1 Second (Have BYpass)", function()
+while wait(0.5) do
+for i, d in pairs(game.Workspace.Map.Enemies:GetDescendants()) do
+    if d.ClassName == "Humanoid" then
+        local character = d.Parent
+        local player = game.Players:GetPlayerFromCharacter(character)
+        if player == nil then
+            d.Health = 0
+        end
+    end
+end
+end
+end)
+
+Section:NewButton("Kill Button","Killing for 1 Second (Have BYpass)", function()
 for i, d in pairs(game.Workspace:GetDescendants()) do
     if d.ClassName == "Humanoid" then
         local character = d.Parent
@@ -273,9 +300,7 @@ Section:NewButton("DoodleSphere","Killing for 1 Second (Have BYpass)", function(
 player.Character:PivotTo(game.Workspace.Map:FindFirstChild("DoodleSphere").Here.CFrame + Vector3.new(0, 3, 0))
 end)
 
-Section:NewButton("GasterRoom","Killing for 1 Second (Have BYpass)", function()
-player.Character:PivotTo(game.Workspace.Map:FindFirstChild("GasterRoom").TPPart.CFrame + Vector3.new(0, 3, 0))
-end)
+
 
 Section:NewButton("LoadingZone","Killing for 1 Second (Have BYpass)", function()
 player.Character:PivotTo(game.Workspace.Map:FindFirstChild("LoadingZone").TPPart.CFrame + Vector3.new(0, 3, 0))
@@ -290,7 +315,6 @@ end)
 
 Section:NewButton("SFRoom","Killing for 1 Second (Have BYpass)", function()
 player.Character:PivotTo(game.Workspace.Map:FindFirstChild("SFRoom").Here.CFrame + Vector3.new(0, 3, 0))
-
 end)
 
 
@@ -299,10 +323,26 @@ player.Character:PivotTo(game.Workspace.Map:FindFirstChild("TrueBarrier").TPHere
 end)
 
 Section:NewButton("Tundra","Killing for 1 Second (Have BYpass)", function()
-player.Character:PivotTo(CFrame.new(-4705.5908203125, 461.3764343261719, -9145.166015625))
+player.Character:PivotTo(CFrame.new(-4705.5908203125, 470.3764343261719, -9145.166015625))
 end)
 
+local Tab = Window:NewTab("Other Teleport")
 
+
+
+local Section = Tab:NewSection("Basic Functions")
+
+Section:NewButton("GasterRoom","Killing for 1 Second (Have BYpass)", function()
+player.Character:PivotTo(game.Workspace.Map:FindFirstChild("GasterRoom").TPPart.CFrame + Vector3.new(0, 3, 0))
+end)
+
+Section:NewButton("Shangalavania Area","Killing for 1 Second (Have BYpass)", function()
+player.Character:PivotTo(CFrame.new(-3824.217529296875, 2895.293701171875, 2938.01416015625))
+end)
+
+Section:NewButton("Boss Area","Killing for 1 Second (Have BYpass)", function()
+player.Character:PivotTo(CFrame.new(-2104.30029296875, 3.225191593170166, 141.392822265625))
+end)
 local Tab = Window:NewTab("VIP SERVER")
 
 
