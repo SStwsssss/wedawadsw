@@ -14,6 +14,34 @@ local Tab = Window:NewTab("Main")
 
 local Section = Tab:NewSection("Basic Functions")
 
+Section:NewTextBox("Item Count", "Input Item Name", function(txt2)
+local z = 0
+for i , obj in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+	if obj.Name == txt2 then
+	print(z + 1)
+	z = z + 1
+	wait(0.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000001)
+	end
+end
+local inst = Instance.new("ScreenGui")
+inst.Parent = game.Players.LocalPlayer.PlayerGui
+inst.Name = "Adolf"
+local ins = Instance.new("Frame")
+ins.Size = UDim2.new(0.552294195, 0, 0.581001401, 0)
+ins.Position = UDim2.new(0.230000004, 0, 0.128568858, 0)
+ins.BackgroundTransparency = 1
+ins.Parent = inst
+local tex = Instance.new("TextLabel")
+tex.Parent = ins
+tex.Text = z .. " ".. txt2
+tex.Size = UDim2.new(1,1,1,1)
+tex.TextColor3 = Color3.fromRGB(255,255,255)
+tex.BackgroundTransparency = 1
+tex.TextScaled = true
+wait(3)
+inst:Destroy()
+end)
+
 Section:NewButton("Esp Enemies","Killing for 1 Second (Have BYpass)", function()
 while wait(0.02) do
 for i , obj in pairs(game.Workspace.Map.Enemies:GetDescendants()) do
