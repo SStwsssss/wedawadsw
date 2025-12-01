@@ -317,6 +317,10 @@ Section:NewButton("Tesco","Killing for 1 Second (Have BYpass)", function()
 player.Character:PivotTo(CFrame.new(3056.7158203125, 35334.44140625, -11534.0029296875))
 end)
 
+Section:NewButton("XTALE","Killing for 1 Second (Have BYpass)", function()
+player.Character:PivotTo(CFrame.new(1321.1259765625, 39.36908721923828, -1463.424560546875))
+end)
+
 local Tab = Window:NewTab("Other Teleport")
 
 
